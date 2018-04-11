@@ -394,6 +394,8 @@ zgrab_certificate_trust = SubRecord({
     "was_valid": Boolean(doc="was this certificate ever valid in this browser")
 })
 
+zgrab_lint = SubRecord({})
+
 zgrab_certificate = SubRecord({
     "raw": Binary(),
     "parsed": zgrab_parsed_certificate,
@@ -404,7 +406,7 @@ zgrab_certificate = SubRecord({
         "android": zgrab_certificate_trust,
         "java": zgrab_certificate_trust,
     }),
-    "lint": lint
+    "lint": zgrab_lint
 })
 
 zgrab_server_certificate_valid = SubRecord({
